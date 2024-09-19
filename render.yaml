@@ -11,7 +11,7 @@ services:
     plan: free
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "rails s -b 'ssl://localhost:3000?key=./mtls_certs/server.key&cert=./mtls_certs/server.crt'"
+    startCommand: "rails s -b 'ssl://0.0.0.0:10000?key=./mtls_certs/server.key&cert=./mtls_certs/server.crt'"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
